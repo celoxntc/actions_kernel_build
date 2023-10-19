@@ -1,15 +1,23 @@
-name: BuildK
+name: PE2
+
+env:
+  KERNEL_SOURCE: 'https://github.com/EcrosoftXiao/kernel_xiaomi_cepheus'
+  KERNEL_SOURCE_BRANCH: 'eleven'
+  KERNEL_DEFCONFIG: 'cepheus-stock_defconfig'
+  KERNEL_NAME: 'Eleven-cepheus'
+
 on:
 #   schedule:
 #     - cron: '0 0 * * 0'
   workflow_dispatch:
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-     uses: actions/checkout@v3
-     - name: Start
-    run: |
+      - uses: actions/checkout@v3
+
+      - name: run build script
+        run: |
         ./build
 
     - name: release
