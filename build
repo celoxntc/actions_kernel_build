@@ -10,7 +10,7 @@ BINUTILS_GIT="https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/
 
 BINUTILS_32_GIT="https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9"
 
-KERNEL_SOURCE_URL="https://github.com/celoxntc/Xiaomi_Kernel_OpenSource"
+KERNEL_SOURCE_URL="https://github.com/EastOrrerySunSoft/kernel_xiaomi_cepheus_aosp"
 
 ANYKERNEL_GIT="https://github.com/thecatvoid/AnyKernel3.git"
 
@@ -39,7 +39,7 @@ make_fun() {
 }
 
 # Make defconfig
-make_fun cepheus_user_defconfig
+make_fun cepheus_defconfig
 
 # Make kernel
 make_fun -j"$(nproc --all)" || make_fun -j1
@@ -49,9 +49,7 @@ cd "${WORK}" || exit
 [ ! -d ANY ] && git clone --depth=1 "${ANYKERNEL_GIT}" ANY
 cd ANY || exit 1
 rm -rf ./*Image* ./*.zip
-cp "${KERNEL_SRC}/out/arch/arm64/boot/Image.gz-dtb" ./
-cp "${KERNEL_SRC}/out/arch/arm64/boot/Image" ./
-cp "${KERNEL_SRC}/out/arch/arm64/boot/Image.gz" ./
+cp "${KERNEL_SRC}/out/arch/arm64/boot/Image*" ./
 cp "${KERNEL_SRC}/out/arch/arm64/boot/dtb" ./
 cp "${KERNEL_SRC}/out/arch/arm64/boot/dtbo.img" ./
 dates="$(date +%F+%T%z)"
