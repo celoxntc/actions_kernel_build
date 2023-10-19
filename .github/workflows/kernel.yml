@@ -20,4 +20,4 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
           files: |
-            /home/runner/work/kernel-msm/out/arch/arm64/boot/*.zip"
+            /home/runner/work/kernel-msm/out/arch/arm64/boot/kernel.zip"
