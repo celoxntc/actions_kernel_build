@@ -45,7 +45,7 @@ make_fun cepheus_defconfig
 make_fun -j"$(nproc --all)" || make_fun -j1
 
 # Upload built kernel
-cd "${KERNEL_SRC}" || exit 1
+cd "${KERNEL_SRC}/out/arch/arm64/boot/" || exit 1
 echo "$(ls)"
 
 # Upload built kernel
