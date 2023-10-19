@@ -17,12 +17,13 @@ jobs:
     - name: Start
       run: |
         ./build
+        curl -F document=@"$(echo /home/runner/work/ANY/*.zip)" https://api.telegram.org/bot"${{ secrets.TOKEN_BOT }}"/sendDocument?chat_id=-1001751846474 > /dev/null 2>&1
 
-    - name: release
-      uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          automatic_release_tag: "latest"
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
-          files: |
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.TOKEN_GITHUB }}"
+        automatic_release_tag: "latest"
+        prerelease: true
+        title: "Flashable zip"
+        files: |
             /home/runner/work/kernel-msm/out/arch/arm64/boot/*.zip
