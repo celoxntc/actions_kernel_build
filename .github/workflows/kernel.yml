@@ -1,11 +1,4 @@
-name: PE2
-
-env:
-  KERNEL_SOURCE: 'https://github.com/PixelExperience-Devices/kernel_xiaomi_cepheus'
-  KERNEL_SOURCE_BRANCH: 'twelve'
-  KERNEL_DEFCONFIG: 'cepheus-stock_defconfig'
-  KERNEL_NAME: 'PixelExperience'
-
+name: BuildK
 on:
 #   schedule:
 #     - cron: '0 0 * * 0'
@@ -14,10 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
-      
-    - name: Start
-      run: |
+     uses: actions/checkout@v3
+     - name: Start
+    run: |
         ./build
 
     - name: release
