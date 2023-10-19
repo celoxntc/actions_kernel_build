@@ -45,6 +45,10 @@ make_fun cepheus_defconfig
 make_fun -j"$(nproc --all)" || make_fun -j1
 
 # Upload built kernel
+cd "${KERNEL_SRC}" || exit 1
+echo "$(ls)"
+
+# Upload built kernel
 cd "${WORK}" || exit
 [ ! -d ANY ] && git clone --depth=1 "${ANYKERNEL_GIT}" ANY
 cd ANY || exit 1
