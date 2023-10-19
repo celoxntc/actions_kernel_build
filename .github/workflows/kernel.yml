@@ -18,8 +18,7 @@ jobs:
       run: |
         ./build
 
-    - name: Upload to Release
-      uses: ncipollo/release-action@v1
+    - uses: ncipollo/release-action@v1
         with:
           artifacts: "/home/runner/work/kernel-msm/out/arch/arm64/boot/*.zip"
           tag: "Latest"
