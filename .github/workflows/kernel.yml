@@ -27,4 +27,13 @@ jobs:
         prerelease: false
         title: "Flashable zip"
         files: |
-         /home/runner/work/kernel-msm/out/arch/arm64/boot/*.zip
+         
+
+
+uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          automatic_release_tag: latest"
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            /home/runner/work/kernel-msm/out/arch/arm64/boot/*.zip
