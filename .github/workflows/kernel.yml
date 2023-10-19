@@ -12,17 +12,16 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@main
 
     - name: Start
       run: |
         ./build
 
-    - name: releases
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
-        repo_token: "${{ secrets.TOKEN_GITHUB }}"
         automatic_release_tag: "latest"
-        prerelease: false
+        prerelease: true
+        title: "Flashable zip"
         files: |
             /home/runner/work/kernel-msm/out/arch/arm64/boot/*.zip
