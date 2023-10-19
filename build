@@ -10,7 +10,7 @@ BINUTILS_GIT="https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/
 
 BINUTILS_32_GIT="https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9"
 
-KERNEL_SOURCE_URL="https://github.com/EastOrrerySunSoft/kernel_xiaomi_cepheus_aosp"
+KERNEL_SOURCE_URL="https://github.com/shandongtlb/kernel_xiaomi_sm8150_MI9"
 
 ANYKERNEL_GIT="https://github.com/thecatvoid/AnyKernel3.git"
 
